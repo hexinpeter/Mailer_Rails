@@ -38,6 +38,16 @@ group :test do
   gem "guard-rspec"
 end
 
+# for bootstrap
+gem 'bootstrap-sass', '~> 3.2.0'
+gem 'autoprefixer-rails'
+
+# Fix issues with turbolinks and jquery
+gem 'jquery-turbolinks'
+
+# slim the html
+gem 'slim'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

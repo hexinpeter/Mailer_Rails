@@ -26,7 +26,7 @@ class EmailsController < ApplicationController
   def create
     @email = Email.new(email_params)
 
-    # test
+    # sending mails
     UserMailer.send_to(@email.recipient, @email.subject, @email.body).deliver_now
 
     respond_to do |format|

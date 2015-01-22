@@ -1,0 +1,42 @@
+= form_for(@email, html: {class:"form-horizontal"}) do |f|
+  - if @email.errors.any? 
+    div#error_explanation
+      h2
+        = pluralize(@email.errors.count, "error") 
+        | prohibited this email from being saved:
+
+      <ul>
+      - @email.errors.full_messages.each do |message| 
+        li = message 
+      </ul>
+    
+  
+  div.form-group
+    div.field
+      = f.label :recipient, class:"col-sm-2 control-label"
+      div.col-sm-3
+        = f.text_field :recipient, class:"form-control"
+    
+  div.form-group  
+    div.field
+      = f.label :subject, class:"col-sm-2 control-label"
+      div.col-sm-3
+        = f.text_field :subject, class:"form-control"
+
+  div.form-group
+    div.field
+      = f.label :date_time, class:"col-md-2 control-label"
+      div.col-md-6
+        = f.datetime_select :date_time, class:"form-control"
+  
+  div.form-group
+    div.field
+      = f.label :body, class:"col-sm-2 control-label"
+      div.col-sm-3
+        = f.text_area :body, class:"form-control"
+  
+  div.form-group
+    div.actions
+      = f.submit value:"Send", class:" btn btn-primary btn-lg"
+  
+
