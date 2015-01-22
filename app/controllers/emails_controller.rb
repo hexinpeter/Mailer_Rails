@@ -26,6 +26,9 @@ class EmailsController < ApplicationController
   def create
     @email = Email.new(email_params)
 
+    # test
+    UserMailer.send_to().deliver_now
+
     respond_to do |format|
       if @email.save
         format.html { redirect_to @email, notice: 'Email was successfully created.' }
