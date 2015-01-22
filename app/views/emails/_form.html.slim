@@ -15,13 +15,13 @@
     div.field
       = f.label :recipient, class:"col-sm-2 control-label"
       div.col-sm-3
-        = f.text_field :recipient, class:"form-control"
+        = f.text_field :recipient, class:"form-control", required:true, type:"email"
     
   div.form-group  
     div.field
       = f.label :subject, class:"col-sm-2 control-label"
       div.col-sm-3
-        = f.text_field :subject, class:"form-control"
+        = f.text_field :subject, class:"form-control", required:true
 
   div.form-group
     div.field
