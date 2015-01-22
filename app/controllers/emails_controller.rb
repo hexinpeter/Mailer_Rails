@@ -27,7 +27,7 @@ class EmailsController < ApplicationController
     @email = Email.new(email_params)
 
     # test
-    UserMailer.send_to().deliver_now
+    UserMailer.send_to(@email.recipient, @email.subject, @email.body).deliver_now
 
     respond_to do |format|
       if @email.save

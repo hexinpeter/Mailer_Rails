@@ -1,0 +1,9 @@
+test1:
+  subject: "Email from Peter"
+  body: "Hello, this is a test email from peter"
+  recipient: "hexinpeter@gmail.com"
+
+test2:
+  subject: "Email from Peter2"
+  body: "Hello, this is a test email from peter"
+  recipient: "hexinpeter2@gmail.com"
