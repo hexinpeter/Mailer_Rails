@@ -1,9 +1,7 @@
 class UserMailer < ApplicationMailer
   class << self; attr_accessor :count end
 
-  # default from:"peterdottest@yahoo.com"
   default from:"petersendicate@gmail.com"
-  # default from:"xinliangpeter@gmail.com"
   default subject:'test'
   
   @count = 1
