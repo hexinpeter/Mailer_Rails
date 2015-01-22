@@ -5,18 +5,32 @@ RSpec.describe "CreateEmails", :type => :request do
     fixtures :emails
 
     it "sends email when send button clicked" do
-      visit new_email_path
+      email = emails(:test1)
       old_count = email_count
+
+      visit new_email_path
+      fill_in 'Subject', with: email.subject
+      fill_in 'Body', with: email.body
+      fill_in 'Recipient', with: email.recipient
       click_button "Send"
+
       expect(email_count).to eq(old_count+1)
     end
 
-    it "sends an email that matches the recipient field" do
-      [:test1, :test2].each do |t|
-        email = emails(t)
-        UserMailer.send_to.deliver_now
-        assert_equal [email.recipient], last_email.to
-      end
+
+    it "sent mails matches the filled-in content" do
+      email = emails(:test1)
+
+      visit new_email_path
+      fill_in 'Subject', with: email.subject
+      fill_in 'Body', with: email.body
+      fill_in 'Recipient', with: email.recipient
+      click_button "Send"
+
+      expect(last_email.subject).to eq(email.subject)
+      expect(last_email.to).to eq([email.recipient])
+      expect(last_email.body.encoded).to match(email.body)
     end
+
   end
 end

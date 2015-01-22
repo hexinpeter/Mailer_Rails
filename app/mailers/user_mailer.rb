@@ -7,9 +7,10 @@ class UserMailer < ApplicationMailer
   #   en.user_mailer.send.subject
   #
   def send_to(recipient, subject, body)
-    mail to: recipient, subject: subject
     @body = body
     @greeting = 'Hi'
+
+    mail to: recipient, subject: subject
   end
 
 end
