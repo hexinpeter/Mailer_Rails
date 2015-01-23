@@ -2,16 +2,16 @@ class EmailsController < ApplicationController
   include EmailValidation
   before_action :set_email, only: [:show, :edit, :update, :destroy]
 
-  # GET /emails
-  # GET /emails.json
-  def index
-    @emails = Email.all
-  end
+  # # GET /emails
+  # # GET /emails.json
+  # def index
+  #   @emails = Email.all
+  # end
 
-  # GET /emails/1
-  # GET /emails/1.json
-  def show
-  end
+  # # GET /emails/1
+  # # GET /emails/1.json
+  # def show
+  # end
 
   # GET /emails/new
   def new
@@ -45,29 +45,29 @@ class EmailsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /emails/1
-  # PATCH/PUT /emails/1.json
-  def update
-    respond_to do |format|
-      if @email.update(email_params)
-        format.html { redirect_to @email, notice: 'Email was successfully updated.' }
-        format.json { render :show, status: :ok, location: @email }
-      else
-        format.html { render :edit }
-        format.json { render json: @email.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # # PATCH/PUT /emails/1
+  # # PATCH/PUT /emails/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @email.update(email_params)
+  #       format.html { redirect_to @email, notice: 'Email was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @email }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @email.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
-  # DELETE /emails/1
-  # DELETE /emails/1.json
-  def destroy
-    @email.destroy
-    respond_to do |format|
-      format.html { redirect_to emails_url, notice: 'Email was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
+  # # DELETE /emails/1
+  # # DELETE /emails/1.json
+  # def destroy
+  #   @email.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to emails_url, notice: 'Email was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.
