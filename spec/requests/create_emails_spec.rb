@@ -44,7 +44,6 @@ RSpec.describe "CreateEmails", :type => :request do
 
       expect(email_count).to eq(old_count)
     end
-
   end
 end
 

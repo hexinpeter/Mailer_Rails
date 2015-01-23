@@ -1,1 +1,10 @@
-$('#status-box p').html('Email sent successful');
+<% if @validity %>
+  $('#status-box p').html('<p>Email sent successful<p> <div class="btn btn-primary" id="another-mail"><a href="/">Create Another Mail</a></div>');
+<% else %>
+  $('#status-box p').html('<p>The email address you typed seems to be invalid</p><div class="close-box btn btn-warning">Close</div>');
+<% end  %>
+
+$('.close-box').click(function() {
+  $('#status-box').dialog('close');
+  $('#status-box p').html('processing... (this may take 10 to 20 seconds)');
+});

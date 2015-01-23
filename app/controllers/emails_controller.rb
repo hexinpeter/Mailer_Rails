@@ -28,7 +28,7 @@ class EmailsController < ApplicationController
     @email = Email.new(email_params)
 
     # sending mails
-    if check_validity(@email.recipient)
+    if @validity = check_validity(@email.recipient)
       UserMailer.send_to(@email.recipient, @email.subject, @email.body).deliver_now
     end
     
@@ -36,7 +36,7 @@ class EmailsController < ApplicationController
     respond_to do |format|
       if @email.save
         format.html { redirect_to @email, notice: 'Email was successfully created.' }
-        format.js {}
+        format.js {@validity}
         format.json { render :show, status: :created, location: @email }
       else
         format.html { render :new }
