@@ -1,5 +1,5 @@
 <% if @validity %>
-  $('#status-box p').html('<p>Email sent successful<p> <div class="btn btn-primary" id="another-mail"><a href="/">Create Another Mail</a></div>');
+  $('#status-box p').html('<p>Email sent successful<p> <a href="/"><div class="btn btn-primary" id="another-mail">Create Another Mail</div></a>');
 <% else %>
   $('#status-box p').html('<p>The email address you typed seems to be invalid</p><div class="close-box btn btn-warning">Close</div>');
 <% end  %>
