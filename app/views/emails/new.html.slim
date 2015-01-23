@@ -1,6 +1,9 @@
 div.container
-  h1.headline New Email
+  h1.headline Get An Email From Peter
 
   = render 'form' 
 
   = link_to 'Back', emails_path, class:"btn btn-primary"
+
+  div#status-box title="Processing"
+    

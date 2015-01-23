@@ -45,6 +45,10 @@ gem 'autoprefixer-rails'
 # Fix issues with turbolinks and jquery
 gem 'jquery-turbolinks'
 
+# jQuery UI
+# gem 'jquery-ui-rails', ">= 5.0.0"
+# gem 'jquery-ui-sass-rails'
+
 # slim the html
 gem 'slim'
 
