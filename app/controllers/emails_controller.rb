@@ -1,4 +1,5 @@
 class EmailsController < ApplicationController
+  include EmailValidation
   before_action :set_email, only: [:show, :edit, :update, :destroy]
 
   # GET /emails
@@ -27,11 +28,15 @@ class EmailsController < ApplicationController
     @email = Email.new(email_params)
 
     # sending mails
-    UserMailer.send_to(@email.recipient, @email.subject, @email.body).deliver_now
+    if check_validity(@email.recipient)
+      UserMailer.send_to(@email.recipient, @email.subject, @email.body).deliver_now
+    end
+    
 
     respond_to do |format|
       if @email.save
         format.html { redirect_to @email, notice: 'Email was successfully created.' }
+        format.js {}
         format.json { render :show, status: :created, location: @email }
       else
         format.html { render :new }

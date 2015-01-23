@@ -52,6 +52,9 @@ gem 'jquery-turbolinks'
 # slim the html
 gem 'slim'
 
+# http client
+gem "httparty"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

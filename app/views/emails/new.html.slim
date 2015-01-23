@@ -3,7 +3,8 @@ div.container
 
   = render 'form' 
 
-  = link_to 'Back', emails_path, class:"btn btn-primary"
+  = link_to 'Back', emails_path, class:"btn btn-primary send-button"
 
-  div#status-box title="Processing"
-    
+  div#status-box title="Status"
+    p processing...
+

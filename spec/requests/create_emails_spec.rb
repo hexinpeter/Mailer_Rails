@@ -32,5 +32,31 @@ RSpec.describe "CreateEmails", :type => :request do
       expect(last_email.body.encoded).to match(email.body)
     end
 
+    it "does not send email if the address is invalid" do
+      email = emails(:invalid_addr)
+      old_count = email_count
+
+      visit new_email_path
+      fill_in 'Subject', with: email.subject
+      fill_in 'Body', with: email.body
+      fill_in 'Recipient', with: email.recipient
+      click_button "Send"
+
+      expect(email_count).to eq(old_count)
+    end
+
   end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
