@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Rails Mailing app created for learning purposes. 
 
-Things you may want to cover:
+All emails are sent from petersendicate@gmail.com. All emails sent do not hold any legal liabilities.
 
-* Ruby version
+App is available on Heroku at: petermailer.herokuapp.com
 
-* System dependencies
+Technologies involved:
 
-* Configuration
+* ActionMailer
 
-* Database creation
+* MailGun Email address validation API 
 
-* Database initialization
+* AJAX
 
-* How to run the test suite
+* RSpec testing (Capybara used for integration test)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* jQuery
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+-------------------------------------------------------------------------
+This app is provided under an open sourse MIT license
